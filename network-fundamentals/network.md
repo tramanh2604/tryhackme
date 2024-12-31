@@ -16,7 +16,7 @@ The IP address can change from device to device but cannot active simultaneously
 
 Devices can be both a private and public network. A public network address is used to identify the device on the Internet, whereas a private address is used to identify a device amongst other devices.
 
-![public-private-network](images/private-public-network.png)
+![public-private-network](../images/private-public-network.png)
 
 For example, these two devices will be albe to use their private IP address to communicate with each other. However, any data sent to the Internet from either of these devices will be identifies by the same public IP address. Public Ip addresses is given by your ISP local.
 
