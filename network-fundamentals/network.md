@@ -2,7 +2,7 @@
 - **Network** are simply devices connected.
 - **Internet** is one giant network that consists of many, many small network within itself.
 
-![Internet](images/internet2.png)
+![Internet](../images/internet2.png)
 
 - These small networks are called private networks, where networks connecting these smll networks are called public network. So, a network can be one of 2 types:
   + A private network
