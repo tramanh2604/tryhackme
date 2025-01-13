@@ -1,0 +1,54 @@
+# What is the OSI Model?
+- The OSI Model (Open System Interconnection Model) là mô hình được dùng trong Networking. Mô hình này quy định cách thức các thiết bị gửi, nhận gói tin và interpret data.
+
+- Mô hình gồm 7 tầng:
+
+![OSI Model](../images/OSI-model.PNG)
+
+# Layer 1 - Physical
+- Lớp này tham chiếu đến phần cứng được dùng trong mạng. Devices use electrical signal to transfer data between each other in a binary numbering system (0's and 1's).
+
+- Ví dụ: cáp quang, cáp đồng trục...
+
+# Layer 2 - Data Link
+- Đánh địa chỉ vật lý đường chuyền. Nhận gói tin từ tầng Network (gồm IP) và sau đó thêm vào dchi MAC của thiết bị nhận. Ngoài ra nhiệm vụ của tầng này còn là trình bày data ở dạng phù hợp để truyền tải.
+
+# Layer 3 - Network
+- Routing & reassembly data dựa vào IP
+- Routing quyết định đường đi tối ưu nhất (the optimal path) gồm 2 protocol OSPF (Open shortest path first) và RIP (routing information protocol). Các yếu tố quyết định bao gồm:
+	+ What path is the shortest? Qua ít thiết bị hơn
+	+ What path is the most reliable? Ít mất gói tin nhất
+	+ Which path has the faster physical connection? Đồng hay fibre
+
+# Layer 4 - Transport
+- When data is sent between devices, tuân theo 1 trong 2 giao thức:
+	+ TCP
+	+ UDP
+
+## TCP - Transmission control protocol
+- Tin cậy và bảo đảm.
+- Kết nối liên tục giữa 2 thiết bị.
+- Kiểm tra lỗi. Error checking là cách TCP đảm bảo k bị mất gói tin khi gửi và tập hợp gói tin ở tầng 5
+
+![Pros & Cons](../images/TCP-pros-and-cons.png)
+
+- TCP dùng trong file sharing, internet browsing or sending an email vì data cần chính xác (accurate) và đầy đủ (complete).
+
+## UDP - User Datagram Protocol
+- Just hope for the best.
+
+![Pros & Cons](../images/UDO-pros-and-cons.png)
+
+- It's being use for sending small pieces of data (ARP, DHCP) or larger files such as video streaming.
+
+# Layer 5 - Session
+- Khi data đã được định dạng ở tầng 6, tầng 5 sẽ bắt đầu kết nối và duy trì kết nối với thiết bị nhận. When a connection is established, a session is created. 
+- Chịu trách nhiệm đóng kết nối khi k còn dùng nữa, và checkpoint, nếu data is lost, only the newest pieces of data are required to be sent, tiết kiệm băng thông.
+- Data chỉ đi qua 1 session duy nhất.
+
+# Layer 6 - Presentation
+- Translator of data to and from the aplication layer (layer 7). Để thiết bị nhận có thể hiểu data đang ở 1 format khác sang đúng format của thiết bị nhận.
+
+# Layer 7 - Application layer
+- Ví dụ như email clients, browsers, file server browsing software sush as FileZilla, cung cấp GUI cho người dùng tương tác vs data gửi và nhận. 
+- DNS: cách website dịch tên website ra địa chỉ IP.

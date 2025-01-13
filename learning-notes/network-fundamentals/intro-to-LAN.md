@@ -1,0 +1,91 @@
+# Local area network (LAN) topologies
+## Star topology
+![Star topology](../images/star-topology.PNG)
+
+- Các thiết bị kết nối thông qua switch/hub. Mọi thông tin đc gửi đến thiết bị sẽ đi qua central device.
+- Pros:
+	+ Easy to add more devices
+- Cons:
+	+ More cabling, networking equipment => expensive.
+	+ The more network scale, the more maintenance.
+	+ If the central device fails, các thiết bị k thể nhận gửi info nữa.
+
+## Bus topology
+![Bus topology](../images/bus-topology.PNG)
+
+- Dựa trên kết nối duy nhất (backbone cable). 
+- Pros: easy to set up and cost-efficent.
+- Cons:
+	+ Vì all data truyền dọc trên same cable, dễ bị chậm và tắc nghẽn (bottlenecked) nếu có nhiều thiết bị cùng yêu cầu data cùng 1 thời điểm.
+	+ Khó xác định thiết bị nào gặp vấn đề vì data all travelling along the same route.
+	+ If this cable were to break, devices no longer receive or transmit data along the bus.
+
+## Ring topology (token topology)
+![Ring topology](../images/ring-topology.PNG)
+
+- Các thiết bị kết nối trực tiếp vs nhau tạo thành loop. Data is sending across the loop until it reaches the destined device. 
+- Pros: cần ít cáp, ít phụ thuộc vào dedicated hardware (thiết bị phần cứng chuyên dụng - hub/switch) như star topology.
+- Cons:
+	+ It may have to visit many multiple devices before end.
+	+ Bottleneck like bus topology.
+	+ Đứt cáp (cut cable) or one broken device => entire networking breaking.
+
+## Switch - bộ chuyển mạch
+- Kết nối các thiết bị **(connect devices)** với nhau trong mạng ethernet. Các thiết bị cắm vào switch's port.
+- Switch cũng thường đc thấy ở các large network như doanh nghiệp, trường, bệnh viện...
+- Switch hiệu quả hơn hub/repeater. Switch giữ 1 bảng các thiết bị kết nối đến port nào, nên khi nhận data -> chuyển tiếp ngay đến thiết bị đó, reducing network traffic.
+
+![Switch](../images/switch.PNG)
+
+- Switch và Router có thể kết nối với nhau -> tạo ra nhiều đường dẫn chuyền tin. Tuy nhiên sẽ bị chậm.
+
+## Router
+- Kết nối các mạng **(connect networks)** and pass data between them bằng Routing.
+- Routing tạo ra các path between network. 
+
+# Subnetting
+- So, we know that network can be found in all shapes and size, ranging from small to large. Subnetting is the term given to splitting up the network into smaller. 
+
+![IP address](../images/ip-address.png)
+
+- An IP adress is made up 4 sections called octets, 4 bytes (32 bits), từ 0-255.
+- Vai trò:
+	+ Xác định network address
+	+ Xác định host address
+	+ Xác định default gateway
+
+![Vai trò](../images/vai-tro-subnet-mask.PNG)
+
+- The security element. For example, let's take the typical café on the street. This cafe will have 2 networks:
+	1. One for employees, cash register, and other devices for the facility.
+	2. One for the general public to use as a hotspot.
+- Subnetting allows you to seperate these two use cases from each other whilst having the benefits of a connection to larger networks such as the Internet.
+
+# ARP (Address Resolution Protocal)
+- Is the technology that is reponsible for allowing devices to identify themselves on a network.
+- ARP cho phép liên kết địa chỉ MAC với địa chỉ IP trên cùng 1 mạng. Mỗi thiết bị trên mạng, giữ 1 bảng log địa chỉ MAC các thiết bị kết nối với nó.
+- Khi các thiết bị muốn liên lạc với nhau, nó sẽ gửi broadcast tới toàn mạng để tìm thiết bị. Các thiết bị dùng ARP để tìm đchi MAC thiết bị muốn kết nối.
+
+- Cách hoạt động:
+	+ Mỗi thiết bị đều có sổ cái lưu giữ info -> cache. Trong ARP, cache lưu số nhận dạng các thiết bị khác trong mạng.
+	+ Để ánh xạ 2 địa chỉ MAC và IP với nhau, ARP gửi 2 loại tin:
+		+ ARP request
+		+ ARP reply
+	+ Khi gửi ARP request, gói tin broadcast sẽ đi đến từng thiết bị trong mạng và hỏi "MAC address nào sở hữu IP này". Khi các thiết bị nhận đc gói tin, nó chỉ trả lời lại ARP reply nếu sở hữu MAC đó.
+	+ Thiết bị gửi ARP request sẽ lưu lại thông tin trong ARP cache for future use.
+
+![ARP work](../images/ARP-work.png)
+
+# DHCP (Dynamic Host Configuration Protocol)
+- Đchi IP có thể gán tay, bằng cách nhập chúng vào thiết bị hoặc automatically (by using DHCP).
+
+- Cách hoạt động:
+	+ Khi 1 thiết bị kết nối vào mạng, nếu chưa đc gán IP thủ công, nó sẽ gửi 1 gói tin request (DHCP Discover) để tìm DHCP server trên mạng. 
+	+ DHCP server sẽ gửi đchi IP cho thiết bị đó (DHCP Offer). 
+	+ Thiết bị sẽ phản hồi nếu muốn nhận IP đc cấp (DHCP Request).
+	+ DHCP server phản hồi hoàn tất và thiết bị có thể dùng IP (DHCP ACK).
+
+![DHCP work](../images/DHCP-work.png)
+
+
+
