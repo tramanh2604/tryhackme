@@ -98,3 +98,39 @@ Content-Length: 98
  ![Common HTTP status code](../images/common-http-status-code.PNG)
 
  
+ # Header
+ - Header are additional bits of data you can send to the web server when making requests.
+
+ ## Common Request Headers
+ - From client (your browser) to the server
+ 1. Host: một vài web server chứa nhiều website, nếu cung cấp header bạn có thể nói rõ bạn cần website nào, nếu k chỉ nhận được website mặc định của server.
+
+ 2. User-Agent: this is your broswer software and version number, giúp web server căn chỉnh format phù hợp vs web browser, cũng như 1 số thành phần HTML, JavaScript, CSS chỉ phù hợp vs 1 số browser.
+
+ 3. Content-length: khi gửi data tới web server với dạng biểu mẫu, content-length báo cho web server có bao nhiêu data trong web request, giúp web server k bị mất data.
+
+ 4. Accept-Encoding: Cho web server biết loại phương pháp nén nào được browser hỗ trợ để data có thể được thu nhỏ lại để truyền qua internet.
+
+ 5. Cookie: data sent to the server to help remember your information.
+
+ ## Common Respone Header
+ - The headers returned to the client from the server after a request.
+
+ 1. Set-cookie: thông tin cần đc lưu trữ gửi lại web server ở mỗi request.
+
+ 2. Cache-control: thời gian lưu content của respone trong browser's cache trước khi đc request lại lần nữa.
+
+ 3. Content-type: giúp browser nhận biết các xử lý data (HTML, CSS, images,PDF...)
+
+ 4. Content-encoding: loại phương pháp nén được dùng để thu nhỏ data lại khi truyền qua internet.
+
+ # Cookies
+ - Cookies are just a small piece of data that is stored in your computer. Cookies được lưu khi nhận được *Set-cookie* ở header từ web server. Mỗi lần bạn gửi request, bạn sẽ gửi cookie data tới web server. 
+ - Bởi vì HTTP là stateless, cookies được dùng để nhắc web server who you are, some personal settings for the website và liệu bạn có từng ghé thăm website đó chưa.
+
+ ![Cookies](../images/cookies.PNG)
+
+ - Cookies được dùng trong nhiều mục đích nhưng thường được dùng để xác thực trang web. Cookie thường k phải là clear-text-string mà là token (unique secret code that isn't easily humanly guesable).
+
+ ## Viewing your cookies
+ - Using developer tools, in your browser => Network tab
