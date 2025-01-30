@@ -56,3 +56,25 @@
 - Đoạn mã lồng mã: Base64 > Morse > Binary > ROT47 > Decimal. Giải mã tuần tự ta thu được đáp án.
 
 > Answer: Let's make this a bit trickier...
+
+# Task 2: Spectrograms
+- Spectrograms là 1 dạng phổ đồ âm thanh, có thể dùng các sound/wave analyst tool (e.g Audacity) để xem phổ đồ và biết được đáp án. 
+
+> Answer: super secret message
+
+# Task 3: Steganography
+- Steganography là phương pháp che dấu dữ liệu trong file, message, image hoặc video.
+
+- Ta có thể sử dụng platform sau để giải mã data trong image: [Aperi'Solve](https://www.aperisolve.com/). Sau khi thêm ảnh và submit, kéo xuống đến phần Steghide, ta có thấy có 1 file txt đã được giải mã *steganopayload2248.txt*, nội dung file chính là đáp án.
+
+> Answer: SpaghettiSteg
+
+# Task 4: Security through obscurity
+- Bảo mật thông qua sự che dấu là phương pháp bảo mật dựa trên việc giữ bí mật về thiết kế hoặc cách triển khai hệ thống một cách chính xác để đảm bảo an toàn cho hệ thống. 
+- Ví dụ: không công khai thuật toán bảo mật hoặc giấu dường dẫn URL của 1 trang web quan trọng
+
+- Tìm string trong ảnh bằng lệnh sau trong linux:
+`strings meme_1559010886025.jpg`
+
+> Answer: hackerchat.png
+> Answer: AHH_YOU_FOUND_ME!
