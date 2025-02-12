@@ -4,7 +4,7 @@ import requests
 import sys
 
 # Đọc danh sách directory tìm năng từ wordlist2.txt
-sub_list = open("D:/tryhackme/learning-notes/python/wordlist2.txt").read()
+sub_list = open("wordlist2.txt").read()
 directories = sub_list.splitlines()
 
 # Tạo vòng lặp duyệt qua từng directory
