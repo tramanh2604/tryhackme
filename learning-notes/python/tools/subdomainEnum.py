@@ -5,7 +5,7 @@ import requests #gửi request, xử lý respone
 import sys
 
 # Đọc danh sách subdomains từ file
-sub_list = open("D:/tryhackme/learning-notes/python/wordlist2.txt").read()
+sub_list = open("wordlist2.txt").read()
 sub_dom = sub_list.splitlines() #đọc toàn bộ file và tách thành danh sách các dòng
 
 # kiểm tra từng subdomain
