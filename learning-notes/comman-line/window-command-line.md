@@ -1,6 +1,6 @@
 # Window Command Line
 # 1. Basic System Information
-- Ban hành lạnh: issue the command.
+- Ban hành lệnh: issue the command.
 - `set`: check your path. Kết quả bắt đầu bằng `Path=`
 ```
 C:\>set
